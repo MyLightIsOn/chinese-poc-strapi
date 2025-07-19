@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exercises",
+  "info": {
+    "singularName": "exercise",
+    "pluralName": "exercises",
+    "displayName": "Exercise"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "fill_in_blank",
+        "reorder",
+        "multiple_choice"
+      ]
+    },
+    "prompt": {
+      "type": "text"
+    },
+    "options": {
+      "type": "json"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "user_response": {
+      "type": "json"
+    },
+    "is_correct": {
+      "type": "boolean"
+    },
+    "vocab_sets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vocab-set.vocab-set",
+      "inversedBy": "exercises"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "exercises"
+    }
+  }
+}

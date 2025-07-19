@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vocab_entries",
+  "info": {
+    "singularName": "vocab-entry",
+    "pluralName": "vocab-entries",
+    "displayName": "Vocabulary"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "simplified": {
+      "type": "string",
+      "required": false
+    },
+    "traditiional": {
+      "type": "string"
+    },
+    "pinyin": {
+      "type": "string"
+    },
+    "definition": {
+      "type": "text"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "audio_url": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "vocab_set": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vocab-set.vocab-set",
+      "inversedBy": "vocabularies"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "vocabularies"
+    }
+  }
+}

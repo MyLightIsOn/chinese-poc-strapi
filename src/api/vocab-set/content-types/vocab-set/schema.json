@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vocab_sets",
+  "info": {
+    "singularName": "vocab-set",
+    "pluralName": "vocab-sets",
+    "displayName": "Vocab Set"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "is_public": {
+      "type": "boolean"
+    },
+    "stories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::story.story",
+      "mappedBy": "vocab_sets"
+    },
+    "exercises": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::exercise.exercise",
+      "mappedBy": "vocab_sets"
+    },
+    "vocabularies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vocab-entry.vocab-entry",
+      "mappedBy": "vocab_set"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "vocab_sets"
+    }
+  }
+}
