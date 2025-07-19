@@ -468,6 +468,9 @@ export interface ApiVocabEntryVocabEntry extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     definition: Schema.Attribute.Text;
+    hsk_level: Schema.Attribute.Enumeration<
+      ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7', 'hsk8', 'hsk9']
+    >;
     image_url: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

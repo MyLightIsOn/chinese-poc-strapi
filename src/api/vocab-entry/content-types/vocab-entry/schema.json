@@ -44,6 +44,20 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "vocabularies"
+    },
+    "hsk_level": {
+      "type": "enumeration",
+      "enum": [
+        "hsk1",
+        "hsk2",
+        "hsk3",
+        "hsk4",
+        "hsk5",
+        "hsk6",
+        "hsk7",
+        "hsk8",
+        "hsk9"
+      ]
     }
   }
 }
